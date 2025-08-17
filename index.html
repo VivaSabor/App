@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viva Sabor - Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
-<!-- Firebase Scripts -->
-    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js"></script>
     <style>
         .bg-cream { background-color: #d5cbbf; }
         .bg-gold { background-color: #cb8b32; }
@@ -75,7 +72,6 @@
             50% { opacity: 0.5; }
         }
 
-
         .input-field {
             transition: all 0.3s ease;
         }
@@ -85,34 +81,28 @@
             box-shadow: 0 0 0 3px rgba(96, 128, 65, 0.1);
         }
 
-
         .restriction-tag {
             transition: all 0.2s ease;
         }
-
 
         .restriction-tag.selected {
             background-color: #608041;
             color: white;
         }
 
-
         .step-indicator {
             transition: all 0.3s ease;
         }
-
 
         .step-indicator.active {
             background-color: #608041;
             color: white;
         }
 
-
         .step-indicator.completed {
             background-color: #cb8b32;
             color: white;
         }
-
 
         .admin-tab-btn {
             transition: all 0.3s ease;
@@ -120,13 +110,11 @@
             border-bottom: 3px solid transparent;
         }
 
-
         .admin-tab-btn.active {
             color: #608041;
             border-bottom-color: #608041;
             background-color: rgba(96, 128, 65, 0.05);
         }
-
 
         .admin-tab-btn:hover {
             color: #608041;
@@ -146,7 +134,6 @@
                 <h1 class="text-3xl font-bold text-brown mb-2">Viva Sabor</h1>
                 <p class="text-brown opacity-70">Nutrição personalizada para a terceira idade</p>
             </div>
-
 
             <!-- Login Form -->
             <div id="loginForm" class="bg-white rounded-2xl p-6 card-shadow">
@@ -187,7 +174,6 @@
                 </div>
             </div>
 
-
             <!-- Forgot Password Form -->
             <div id="forgotPasswordForm" class="bg-white rounded-2xl p-6 card-shadow hidden">
                 <h2 class="text-2xl font-bold text-brown mb-6 text-center">Recuperar Senha</h2>
@@ -211,7 +197,6 @@
                     </p>
                 </div>
             </div>
-
 
             <!-- Register Form -->
             <div id="registerForm" class="bg-white rounded-2xl p-6 card-shadow hidden">
@@ -260,7 +245,6 @@
         </div>
     </section>
 
-
     <!-- Onboarding Screen -->
     <section id="onboardingScreen" class="hidden min-h-screen bg-cream">
         <!-- Header -->
@@ -275,7 +259,6 @@
             </div>
         </header>
 
-
         <!-- Step 1: Personal Info -->
         <div id="step1" class="p-4 space-y-6">
             <div class="text-center mb-6">
@@ -286,7 +269,6 @@
                 <p class="text-brown opacity-70">Vamos conhecer você melhor para criar um plano personalizado</p>
             </div>
 
-
             <div class="bg-white rounded-2xl p-6 card-shadow space-y-4">
                 <div>
                     <label class="block text-brown font-medium mb-2">Idade</label>
@@ -294,7 +276,6 @@
                            class="input-field w-full p-3 border border-cream rounded-lg focus:outline-none"
                            placeholder="Ex: 68">
                 </div>
-
 
                 <div>
                     <label class="block text-brown font-medium mb-2">Sexo</label>
@@ -309,7 +290,6 @@
                         </button>
                     </div>
                 </div>
-
 
                 <div class="grid grid-cols-2 gap-4">
                     <div>
@@ -327,12 +307,10 @@
                 </div>
             </div>
 
-
             <button onclick="nextStep()" class="w-full bg-green text-white py-3 rounded-lg hover:bg-green hover:opacity-90 transition font-semibold">
                 Continuar
             </button>
         </div>
-
 
         <!-- Step 2: Health Restrictions -->
         <div id="step2" class="hidden p-4 space-y-6">
@@ -343,7 +321,6 @@
                 <h2 class="text-2xl font-bold text-brown mb-2">Restrições Alimentares</h2>
                 <p class="text-brown opacity-70">Selecione suas condições de saúde e restrições</p>
             </div>
-
 
             <div class="bg-white rounded-2xl p-6 card-shadow">
                 <h3 class="font-bold text-brown mb-4">Condições de Saúde</h3>
@@ -374,7 +351,6 @@
                     </button>
                 </div>
 
-
                 <h3 class="font-bold text-brown mb-4">Restrições Alimentares</h3>
                 <div class="grid grid-cols-2 gap-3">
                     <button type="button" onclick="toggleRestriction('lactose')" 
@@ -404,7 +380,6 @@
                 </div>
             </div>
 
-
             <div class="flex space-x-3">
                 <button onclick="prevStep()" class="flex-1 bg-cream text-brown py-3 rounded-lg hover:bg-brown hover:text-white transition font-semibold">
                     Voltar
@@ -415,7 +390,6 @@
             </div>
         </div>
 
-
         <!-- Step 3: Preferences -->
         <div id="step3" class="hidden p-4 space-y-6">
             <div class="text-center mb-6">
@@ -425,7 +399,6 @@
                 <h2 class="text-2xl font-bold text-brown mb-2">Preferências</h2>
                 <p class="text-brown opacity-70">Configure suas preferências de refeições</p>
             </div>
-
 
             <div class="bg-white rounded-2xl p-6 card-shadow space-y-6">
                 <div>
@@ -450,7 +423,6 @@
                     </div>
                 </div>
 
-
                 <div>
                     <label class="block text-brown font-medium mb-2">Nível de Atividade</label>
                     <div class="space-y-2">
@@ -474,7 +446,6 @@
                 </div>
             </div>
 
-
             <div class="flex space-x-3">
                 <button onclick="prevStep()" class="flex-1 bg-cream text-brown py-3 rounded-lg hover:bg-brown hover:text-white transition font-semibold">
                     Voltar
@@ -485,7 +456,6 @@
             </div>
         </div>
     </section>
-
 
     <!-- Admin Panel -->
     <section id="adminPanel" class="hidden min-h-screen bg-cream">
@@ -507,7 +477,6 @@
             </div>
         </header>
 
-
         <!-- Admin Navigation -->
         <nav class="bg-white border-b border-cream">
             <div class="flex overflow-x-auto">
@@ -525,7 +494,6 @@
                 </button>
             </div>
         </nav>
-
 
         <!-- User Management Section -->
         <section id="userManagement" class="p-4 space-y-6">
@@ -591,7 +559,6 @@
                     </div>
                 </div>
 
-
                 <!-- Users List -->
                 <div>
                     <h3 class="font-bold text-brown mb-3">Usuários Autorizados</h3>
@@ -601,7 +568,6 @@
                 </div>
             </div>
         </section>
-
 
         <!-- App Customization Section -->
         <section id="appCustomization" class="hidden p-4 space-y-6">
@@ -638,7 +604,6 @@
                     </button>
                 </div>
 
-
                 <!-- App Logo/Icon -->
                 <div class="mb-6">
                     <h3 class="font-bold text-brown mb-3">Ícone do App</h3>
@@ -657,7 +622,6 @@
                     </div>
                 </div>
 
-
                 <!-- App Name -->
                 <div>
                     <h3 class="font-bold text-brown mb-3">Nome do Aplicativo</h3>
@@ -671,7 +635,6 @@
                 </div>
             </div>
         </section>
-
 
         <!-- Plan Management Section -->
         <section id="planManagement" class="hidden p-4 space-y-6">
@@ -698,7 +661,6 @@
                         </div>
                     </div>
                 </div>
-
 
                 <!-- Meal Editor -->
                 <div id="mealEditor" class="hidden bg-cream rounded-xl p-4">
@@ -729,7 +691,6 @@
             </div>
         </section>
 
-
         <!-- Analytics Section -->
         <section id="analytics" class="hidden p-4 space-y-6">
             <div class="bg-white rounded-2xl p-6 card-shadow">
@@ -759,7 +720,6 @@
                     </div>
                 </div>
 
-
                 <!-- Recent Activity -->
                 <div>
                     <h3 class="font-bold text-brown mb-3">Atividade Recente</h3>
@@ -787,7 +747,6 @@
             </div>
         </section>
     </section>
-
 
     <!-- Main App (Updated with 6 meals) -->
     <section id="mainApp" class="hidden">
@@ -819,7 +778,6 @@
                 </div>
             </div>
         </header>
-
 
         <!-- Main Content -->
         <main class="pb-20">
@@ -861,7 +819,6 @@
                         </div>
                     </div>
                 </div>
-
 
                 <!-- Today's 6 Meals -->
                 <div class="bg-white rounded-2xl p-6 card-shadow">
@@ -962,7 +919,6 @@
                     </div>
                 </div>
 
-
                 <!-- Quick Actions -->
                 <div class="bg-white rounded-2xl p-6 card-shadow">
                     <h2 class="text-xl font-bold text-brown mb-4">Ações Rápidas</h2>
@@ -990,7 +946,6 @@
                     </div>
                 </div>
 
-
                 <!-- Health Tips -->
                 <div class="bg-white rounded-2xl p-6 card-shadow">
                     <h2 class="text-xl font-bold text-brown mb-4">Dica do Dia</h2>
@@ -1006,7 +961,6 @@
                 </div>
             </section>
 
-
             <!-- Updated Meal Plan with 6 meals -->
             <section id="mealPlan" class="hidden p-4 space-y-6">
                 <div class="flex items-center justify-between">
@@ -1015,7 +969,6 @@
                         Gerar Novo
                     </button>
                 </div>
-
 
                 <!-- Week Navigation -->
                 <div class="flex items-center justify-between bg-white rounded-2xl p-4 card-shadow">
@@ -1034,7 +987,6 @@
                         </svg>
                     </button>
                 </div>
-
 
                 <!-- Daily Meal Plans with 6 meals -->
                 <div class="space-y-4">
@@ -1089,7 +1041,6 @@
                         </div>
                     </div>
 
-
                     <div class="bg-white rounded-2xl p-4 card-shadow">
                         <h3 class="font-bold text-brown mb-3">Terça-feira</h3>
                         <div class="space-y-2">
@@ -1140,7 +1091,6 @@
                 </div>
             </section>
 
-
             <!-- Recipes Section -->
             <section id="recipes" class="hidden p-4 space-y-6">
                 <div class="flex items-center justify-between">
@@ -1149,7 +1099,6 @@
                         <span id="planBadgeRecipes" class="text-xs px-2 py-1 rounded-full bg-green text-white font-medium">Básico</span>
                     </div>
                 </div>
-
 
                 <!-- Filter by meal type -->
                 <div class="bg-white rounded-2xl p-4 card-shadow">
@@ -1179,7 +1128,6 @@
                     </div>
                 </div>
 
-
                 <!-- Recipes Grid -->
                 <div id="recipesGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <!-- Recipes will be populated here -->
@@ -1195,7 +1143,6 @@
                     </div>
                 </div>
 
-
                 <!-- Premium Feature Notice for Basic Users -->
                 <div id="consultationsPremiumNotice" class="bg-gold bg-opacity-10 border border-gold rounded-2xl p-6 text-center">
                     <div class="text-4xl mb-4">⭐</div>
@@ -1205,7 +1152,6 @@
                         Fazer Upgrade
                     </button>
                 </div>
-
 
                 <!-- Premium Consultations Content -->
                 <div id="consultationsContent" class="hidden space-y-6">
@@ -1222,7 +1168,6 @@
                             </button>
                         </div>
 
-
                         <div class="bg-white rounded-2xl p-6 card-shadow text-center">
                             <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-4">
                                 <span class="text-3xl">🧠</span>
@@ -1233,7 +1178,6 @@
                                 Agendar
                             </button>
                         </div>
-
 
                         <div class="bg-white rounded-2xl p-6 card-shadow text-center">
                             <div class="w-16 h-16 bg-brown rounded-full flex items-center justify-center mx-auto mb-4">
@@ -1246,7 +1190,6 @@
                             </button>
                         </div>
                     </div>
-
 
                     <!-- Scheduled Consultations -->
                     <div id="scheduledConsultationsSection" class="bg-white rounded-2xl p-6 card-shadow hidden">
@@ -1267,7 +1210,6 @@
                     </div>
                 </div>
 
-
                 <!-- Premium Feature Notice for Basic Users -->
                 <div id="videosPremiumNotice" class="bg-gold bg-opacity-10 border border-gold rounded-2xl p-6 text-center">
                     <div class="text-4xl mb-4">🎥</div>
@@ -1277,7 +1219,6 @@
                         Fazer Upgrade
                     </button>
                 </div>
-
 
                 <!-- Premium Videos Content -->
                 <div id="videosContent" class="hidden space-y-6">
@@ -1299,7 +1240,6 @@
                             </button>
                         </div>
                     </div>
-
 
                     <!-- Videos Grid -->
                     <div id="videosGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1327,7 +1267,6 @@
                         </div>
                     </div>
 
-
                     <!-- Support Section -->
                     <div class="border-t border-cream pt-6">
                         <h3 class="font-bold text-brown mb-4">Suporte</h3>
@@ -1344,7 +1283,6 @@
                             </button>
                         </div>
 
-
                         <!-- Chat Support (Premium only) -->
                         <div id="chatSupportSection" class="bg-cream rounded-xl p-4">
                             <div class="flex items-center space-x-3 mb-2">
@@ -1359,7 +1297,6 @@
                         </div>
                     </div>
                 </div>
-
 
                 <!-- Settings -->
                 <div class="bg-white rounded-2xl p-6 card-shadow">
@@ -1378,7 +1315,6 @@
                 </div>
             </section>
         </main>
-
 
         <!-- Bottom Navigation -->
         <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-cream">
@@ -1417,7 +1353,6 @@
         </nav>
     </section>
 
-
     <!-- Recipe Detail Modal -->
     <div id="recipeModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
@@ -1436,7 +1371,6 @@
                     <span id="recipeModalCategory">🥣 Café da Manhã</span>
                 </div>
 
-
                 <!-- Ingredients -->
                 <div>
                     <h3 class="font-bold text-brown mb-3 text-lg">Ingredientes</h3>
@@ -1447,7 +1381,6 @@
                     </div>
                 </div>
 
-
                 <!-- Instructions -->
                 <div>
                     <h3 class="font-bold text-brown mb-3 text-lg">Modo de Preparo</h3>
@@ -1455,7 +1388,6 @@
                         <!-- Instructions will be populated here -->
                     </div>
                 </div>
-
 
                 <!-- Nutritional Info -->
                 <div>
@@ -1482,7 +1414,6 @@
                     </div>
                 </div>
 
-
                 <!-- Restrictions -->
                 <div id="recipeModalRestrictions">
                     <h3 class="font-bold text-brown mb-3 text-lg">Adequado para</h3>
@@ -1493,7 +1424,6 @@
             </div>
         </div>
     </div>
-
 
     <!-- Edit Restrictions Modal -->
     <div id="restrictionsModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
@@ -1535,7 +1465,6 @@
                         </button>
                     </div>
 
-
                     <h3 class="font-bold text-brown mb-4">Restrições Alimentares</h3>
                     <div class="grid grid-cols-2 gap-3">
                         <button type="button" onclick="toggleModalRestriction('lactose')" 
@@ -1565,7 +1494,6 @@
                     </div>
                 </div>
 
-
                 <div class="flex space-x-3">
                     <button onclick="closeRestrictionsModal()" class="flex-1 bg-cream text-brown py-3 rounded-lg hover:bg-brown hover:text-white transition font-semibold">
                         Cancelar
@@ -1577,7 +1505,6 @@
             </div>
         </div>
     </div>
-
 
     <!-- Password Reset Modal -->
     <div id="passwordResetModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
@@ -1612,14 +1539,12 @@
                            placeholder="123456">
                 </div>
 
-
                 <button onclick="saveNewPassword()" class="w-full bg-green text-white py-3 rounded-lg hover:opacity-90 transition font-semibold">
                     Redefinir Senha
                 </button>
             </div>
         </div>
     </div>
-
 
     <!-- Edit Profile Modal -->
     <div id="profileModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
@@ -1644,7 +1569,6 @@
                            class="input-field w-full p-3 border border-cream rounded-lg focus:outline-none">
                 </div>
 
-
                 <div class="grid grid-cols-2 gap-4">
                     <div>
                         <label class="block text-brown font-medium mb-2">Peso (kg)</label>
@@ -1657,7 +1581,6 @@
                                class="input-field w-full p-3 border border-cream rounded-lg focus:outline-none">
                     </div>
                 </div>
-
 
                 <div>
                     <label class="block text-brown font-medium mb-2">Sexo</label>
@@ -1673,7 +1596,6 @@
                     </div>
                 </div>
 
-
                 <div class="flex space-x-3 pt-4">
                     <button onclick="closeProfileModal()" class="flex-1 bg-cream text-brown py-3 rounded-lg hover:bg-brown hover:text-white transition font-semibold">
                         Cancelar
@@ -1686,77 +1608,16 @@
         </div>
     </div>
 
-
     <script>
-// ========== CONFIGURAÇÃO FIREBASE ==========
-        const firebaseConfig = {
-            apiKey: "AIzaSyAZu9xqrwSXSV9hxh3oJbY-TwIjXJKTg4Y",
-            authDomain: "viva-sabor.firebaseapp.com",
-            projectId: "viva-sabor",
-            storageBucket: "viva-sabor.firebasestorage.app",
-            messagingSenderId: ".",
-            appId: "1:.:web:e2cf24f0d3cf310bd24215",
-            measurementId: "G-CGFCSYYQ6X"
-        };
-
-
-        firebase.initializeApp(firebaseConfig);
-        const auth = firebase.auth();
-
-
-        // ========== VARIÁVEIS GLOBAIS (suas existentes) ==========
-        let userData = {};
+        // Global variables
         let currentStep = 1;
         let selectedGender = '';
         let selectedRestrictions = [];
         let selectedGoal = '';
         let selectedActivity = '';
+        let userData = {};
         let selectedPlan = '';
         let isFirstLogin = false;
-        let currentUser = null; // Nova variável para Firebase
-
-
-// ========== MONITOR DE AUTENTICAÇÃO FIREBASE ==========
-        auth.onAuthStateChanged(function(user) {
-            if (user) {
-                // Usuário logado no Firebase
-                loadUserDataFromFirebase(user);
-            } else {
-                // Usuário não logado
-                currentUser = null;
-                // Manter sua lógica de mostrar login
-            }
-        });
-
-
-        function loadUserDataFromFirebase(user) {
-            // Carregar dados do usuário do localStorage (mantendo sua estrutura)
-            const existingUser = localStorage.getItem('vivasabor_user_' + user.email);
-            
-            if (existingUser) {
-                userData = JSON.parse(existingUser);
-                userData.email = user.email;
-                currentUser = user;
-                
-                // Verificar se é admin
-                if (user.email === 'administrador@gmail.com') {
-                    userData.isAdmin = true;
-                    showAdminPanel();
-                } else {
-                    showMainApp();
-                }
-            } else {
-                // Primeiro login - usar sua lógica existente
-                userData = { 
-                    email: user.email,
-                    isFirstLogin: true
-                };
-                currentUser = user;
-                isFirstLogin = true;
-                showOnboarding();
-            }
-        }
-
 
         // Login/Register functions
         function showLogin() {
@@ -1765,20 +1626,17 @@
             document.getElementById('forgotPasswordForm').classList.add('hidden');
         }
 
-
         function showRegister() {
             document.getElementById('loginForm').classList.add('hidden');
             document.getElementById('registerForm').classList.remove('hidden');
             document.getElementById('forgotPasswordForm').classList.add('hidden');
         }
 
-
         function showForgotPassword() {
             document.getElementById('loginForm').classList.add('hidden');
             document.getElementById('registerForm').classList.add('hidden');
             document.getElementById('forgotPasswordForm').classList.remove('hidden');
         }
-
 
         function handleForgotPassword(event) {
             event.preventDefault();
@@ -1789,7 +1647,7 @@
                 return;
             }
             
-            // Verificar se usuário existe na lista de permitidos
+            // Check if user exists in allowed users
             const allowedUsers = JSON.parse(localStorage.getItem('vivasabor_allowed_users') || '[]');
             const userExists = allowedUsers.find(user => {
                 return typeof user === 'string' ? user === email : user.email === email;
@@ -1800,53 +1658,38 @@
                 return;
             }
             
-            // Mostrar loading
-            const submitBtn = event.target.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Enviando...';
-            submitBtn.disabled = true;
+            // Generate temporary password (6 digits)
+            let tempPassword = '';
+            for (let i = 0; i < 6; i++) {
+                tempPassword += Math.floor(Math.random() * 10);
+            }
             
-            // Enviar e-mail de recuperação via Firebase
-            auth.sendPasswordResetEmail(email)
-                .then(() => {
-                    alert(`E-mail de recuperação enviado para ${email}!\n\nVerifique sua caixa de entrada e spam.`);
-                    showLogin();
-                })
-                .catch((error) => {
-                    console.error('Erro ao enviar e-mail:', error);
-                    
-                    // Se o usuário não existe no Firebase, gerar senha temporária (sua lógica original)
-                    if (error.code === 'auth/user-not-found') {
-                        // Gerar senha temporária (mantendo sua lógica)
-                        let tempPassword = '';
-                        for (let i = 0; i < 6; i++) {
-                            tempPassword += Math.floor(Math.random() * 10);
-                        }
-                        
-                        // Atualizar na lista de usuários permitidos
-                        const userIndex = allowedUsers.findIndex(user => {
-                            return typeof user === 'string' ? user === email : user.email === email;
-                        });
-                        
-                        if (typeof allowedUsers[userIndex] === 'string') {
-                            allowedUsers[userIndex] = {
-                                email: email,
-                                plan: 'basico',
-                                password: tempPassword,
-                                addedDate: new Date().toISOString(),
-                                isTemporary: true
-                            };
-                        } else {
-                            allowedUsers[userIndex].password = tempPassword;
-                            allowedUsers[userIndex].isTemporary = true;
-                        }
-                        localStorage.setItem('vivasabor_allowed_users', JSON.stringify(allowedUsers));
-                        
-                        alert(`Senha temporária gerada: ${tempPassword}\n\nUse esta senha para fazer login e depois redefina sua senha.`);
+            // Update user password in allowed users list
+            const userIndex = allowedUsers.findIndex(user => {
+                return typeof user === 'string' ? user === email : user.email === email;
+            });
+            
+            if (typeof allowedUsers[userIndex] === 'string') {
+                allowedUsers[userIndex] = {
+                    email: email,
+                    plan: 'basico',
+                    password: tempPassword,
+                    addedDate: new Date().toISOString(),
+                    isTemporary: true
+                };
+            } else {
+                allowedUsers[userIndex].password = tempPassword;
+                allowedUsers[userIndex].isTemporary = true;
+            }
+            
+            localStorage.setItem('vivasabor_allowed_users', JSON.stringify(allowedUsers));
+            
+            // Simulate sending email
+            alert(`✅ Senha temporária enviada!\n\nSua nova senha temporária é: ${tempPassword}\n\n📧 Esta senha foi "enviada" para ${email}\n\nVocê deverá redefinir sua senha no próximo login.`);
+            
             document.getElementById('forgotEmail').value = '';
             showLogin();
         }
-
 
         function handleLogin(event) {
             event.preventDefault();
@@ -1921,16 +1764,13 @@
             }
         }
 
-
         function showPasswordResetModal() {
             document.getElementById('passwordResetModal').classList.remove('hidden');
         }
 
-
         function closePasswordResetModal() {
             document.getElementById('passwordResetModal').classList.add('hidden');
         }
-
 
         function saveNewPassword() {
             const newPassword = document.getElementById('newPassword').value;
@@ -1985,7 +1825,6 @@
             }
         }
 
-
         function handleRegister(event) {
             event.preventDefault();
             const name = document.getElementById('registerName').value;
@@ -1998,80 +1837,17 @@
                 return;
             }
             
-            // Mostrar loading
-            const submitBtn = event.target.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Criando conta...';
-            submitBtn.disabled = true;
-            
-            // Verificar se o usuário está na lista de permitidos
-            const allowedUsers = JSON.parse(localStorage.getItem('vivasabor_allowed_users') || '[]');
-            const userAccess = allowedUsers.find(user => {
-                return typeof user === 'string' ? user === email : user.email === email;
-            });
-            
-            if (!userAccess) {
-                alert('E-mail não autorizado. Entre em contato com o administrador.');
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-                return;
+            if (name && email && password) {
+                userData = { name, email, password };
+                showOnboarding();
             }
-            
-            // Criar conta no Firebase
-            auth.createUserWithEmailAndPassword(email, password)
-                .then((userCredential) => {
-                    const user = userCredential.user;
-                    
-                    // Atualizar perfil do Firebase
-                    return user.updateProfile({
-                        displayName: name
-                    });
-                })
-                .then(() => {
-                    // Salvar dados iniciais (mantendo sua estrutura)
-                    const userPlan = typeof userAccess === 'string' ? 'basico' : userAccess.plan;
-                    userData = { 
-                        name: name,
-                        email: email, 
-                        plan: userPlan,
-                        isFirstLogin: true
-                    };
-                    
-                    alert('Conta criada com sucesso! Complete seu perfil para começar.');
-                    // O onAuthStateChanged vai lidar com o redirecionamento
-                })
-                .catch((error) => {
-                    console.error('Erro no registro:', error);
-                    
-                    let errorMessage = 'Erro ao criar conta. Tente novamente.';
-                    
-                    switch(error.code) {
-                        case 'auth/email-already-in-use':
-                            errorMessage = 'Este e-mail já está em uso.';
-                            break;
-                        case 'auth/invalid-email':
-                            errorMessage = 'E-mail inválido.';
-                            break;
-                        case 'auth/weak-password':
-                            errorMessage = 'Senha muito fraca. Use pelo menos 6 caracteres.';
-                            break;
-                    }
-                    
-                    alert(errorMessage);
-                })
-                .finally(() => {
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                });
         }
-
 
         // Onboarding functions
         function showOnboarding() {
             document.getElementById('loginScreen').classList.add('hidden');
             document.getElementById('onboardingScreen').classList.remove('hidden');
         }
-
 
         function nextStep() {
             if (currentStep === 1) {
@@ -2099,7 +1875,6 @@
             }
         }
 
-
         function prevStep() {
             if (currentStep > 1) {
                 document.getElementById('step' + currentStep).classList.add('hidden');
@@ -2108,7 +1883,6 @@
                 updateStepIndicators();
             }
         }
-
 
         function updateStepIndicators() {
             for (let i = 1; i <= 3; i++) {
@@ -2125,7 +1899,6 @@
             }
         }
 
-
         function selectGender(gender) {
             selectedGender = gender;
             document.querySelectorAll('.gender-btn').forEach(btn => {
@@ -2135,7 +1908,6 @@
             event.target.classList.remove('border-cream', 'text-brown');
             event.target.classList.add('border-green', 'bg-green', 'text-white');
         }
-
 
         function toggleRestriction(restriction) {
             const index = selectedRestrictions.indexOf(restriction);
@@ -2148,7 +1920,6 @@
             }
         }
 
-
         function selectGoal(goal) {
             selectedGoal = goal;
             document.querySelectorAll('.goal-btn').forEach(btn => {
@@ -2159,7 +1930,6 @@
             event.target.classList.add('border-green', 'bg-green', 'text-white');
         }
 
-
         function selectActivity(activity) {
             selectedActivity = activity;
             document.querySelectorAll('.activity-btn').forEach(btn => {
@@ -2169,7 +1939,6 @@
             event.target.classList.remove('border-cream', 'text-brown');
             event.target.classList.add('border-green', 'bg-green', 'text-white');
         }
-
 
         function completeOnboarding() {
             if (!selectedGoal || !selectedActivity) {
@@ -2204,7 +1973,6 @@
             
             showMainApp();
         }
-
 
         function showMainApp() {
             document.getElementById('loginScreen').classList.add('hidden');
@@ -2246,7 +2014,6 @@
             showDashboard();
         }
 
-
         function updatePlanBadges() {
             const planName = userData.plan === 'premium' ? 'Premium ⭐' : 'Básico 📱';
             const planColor = userData.plan === 'premium' ? 'bg-gold' : 'bg-green';
@@ -2260,7 +2027,6 @@
                 }
             });
         }
-
 
         function configurePlanFeatures() {
             const isPremium = userData.plan === 'premium';
@@ -2301,12 +2067,10 @@
             }
         }
 
-
         function updateProfileInfo() {
             document.getElementById('profileName').textContent = userData.name || 'Nome do Usuário';
             document.getElementById('profileEmail').textContent = userData.email || 'email@exemplo.com';
         }
-
 
         // Main app navigation functions
         function showSection(sectionId) {
@@ -2323,46 +2087,38 @@
             document.getElementById(sectionId).classList.add('animate-fade-in');
         }
 
-
         function showDashboard() {
             showSection('dashboard');
             event.target?.closest('.nav-item')?.classList.add('active');
         }
-
 
         function showRecipes() {
             showSection('recipes');
             event.target?.closest('.nav-item')?.classList.add('active');
         }
 
-
         function showMealPlan() {
             showSection('mealPlan');
             event.target?.closest('.nav-item')?.classList.add('active');
         }
-
 
         function showConsultations() {
             showSection('consultations');
             event.target?.closest('.nav-item')?.classList.add('active');
         }
 
-
         function showVideos() {
             showSection('videos');
             event.target?.closest('.nav-item')?.classList.add('active');
         }
 
-
         function showProfile() {
             showSection('profile');
         }
 
-
         function showNotifications() {
             alert('Você tem 3 novas notificações:\n\n• Lembrete: Hora do lanche da tarde!\n• Nova receita disponível\n• Consulta agendada para amanhã');
         }
-
 
         function getBrazilDate() {
             // Get current date in Brazil timezone (UTC-3)
@@ -2371,7 +2127,6 @@
             const brazilTime = new Date(utc + (-3 * 3600000));
             return brazilTime;
         }
-
 
         function formatBrazilDate(date) {
             const options = { 
@@ -2383,7 +2138,6 @@
             };
             return date.toLocaleDateString('pt-BR', options);
         }
-
 
         function getWeekDates() {
             const today = getBrazilDate();
@@ -2399,7 +2153,6 @@
             }
             return weekDates;
         }
-
 
         function generateWeeklyMealPlan() {
             const weekDates = getWeekDates();
@@ -2436,7 +2189,6 @@
                 'ceia': filteredRecipes.filter(r => r.category === 'ceia')
             };
 
-
             // Track used recipes to ensure variety
             const usedRecipes = {
                 'cafe': [],
@@ -2446,7 +2198,6 @@
                 'jantar': [],
                 'ceia': []
             };
-
 
             const weekPlan = weekDays.map((day, index) => {
                 const date = weekDates[index];
@@ -2511,10 +2262,8 @@
                 };
             });
 
-
             return weekPlan;
         }
-
 
         function updateMealPlanDisplay() {
             const weekPlan = generateWeeklyMealPlan();
@@ -2530,7 +2279,6 @@
                     <p class="text-sm text-brown opacity-70">${startDate.getDate()} - ${endDate.getDate()} ${endDate.toLocaleDateString('pt-BR', { month: 'short' })} ${endDate.getFullYear()}</p>
                 `;
             }
-
 
             // Update daily meal plans
             const dailyPlansContainer = document.querySelector('#mealPlan .space-y-4');
@@ -2557,7 +2305,6 @@
             }
         }
 
-
         function generateNewPlan() {
             const restrictions = userData.restrictions ? userData.restrictions.join(', ') : 'Nenhuma';
             
@@ -2566,7 +2313,6 @@
                 alert('✅ Novo plano alimentar gerado com sucesso!\n\nSeu plano personalizado com 6 refeições diárias está pronto e considera todas as suas restrições alimentares.');
             }
         }
-
 
         // Add active state styling
         const style = document.createElement('style');
@@ -2587,7 +2333,6 @@
         `;
         document.head.appendChild(style);
 
-
         // Admin functions
         function showAdminPanel() {
             document.getElementById('loginScreen').classList.add('hidden');
@@ -2599,7 +2344,6 @@
             loadUsersList();
             updateAnalytics();
         }
-
 
         function showAdminSection(sectionId) {
             // Hide all admin sections
@@ -2616,7 +2360,6 @@
             });
             event.target.classList.add('active');
         }
-
 
         function selectPlan(plan) {
             selectedPlan = plan;
@@ -2637,7 +2380,6 @@
             }
         }
 
-
         function generatePassword() {
             let password = '';
             for (let i = 0; i < 6; i++) {
@@ -2645,7 +2387,6 @@
             }
             document.getElementById('generatedPassword').value = password;
         }
-
 
         function regeneratePassword(email) {
             if (confirm(`Gerar nova senha para ${email}?`)) {
@@ -2680,7 +2421,6 @@
                 alert(`Nova senha gerada para ${email}: ${newPassword}\n\nComunique esta senha ao usuário.`);
             }
         }
-
 
         function addUser() {
             const email = document.getElementById('newUserEmail').value;
@@ -2741,7 +2481,6 @@
             alert(`✅ Usuário adicionado com sucesso!\n\nE-mail: ${email}\nPlano: ${planName}\nSenha: ${password}\n\nComunique estes dados ao usuário.`);
         }
 
-
         function changePlan(email) {
             const allowedUsers = JSON.parse(localStorage.getItem('vivasabor_allowed_users') || '[]');
             const userIndex = allowedUsers.findIndex(user => {
@@ -2773,7 +2512,6 @@
             }
         }
 
-
         function removeUser(email) {
             if (confirm(`Tem certeza que deseja remover o acesso de ${email}?`)) {
                 const allowedUsers = JSON.parse(localStorage.getItem('vivasabor_allowed_users') || '[]');
@@ -2790,7 +2528,6 @@
                 }
             }
         }
-
 
         function loadUsersList() {
             const allowedUsers = JSON.parse(localStorage.getItem('vivasabor_allowed_users') || '[]');
@@ -2837,7 +2574,6 @@
             }).join('');
         }
 
-
         function applyColors() {
             const primaryColor = document.getElementById('primaryColor').value;
             const secondaryColor = document.getElementById('secondaryColor').value;
@@ -2857,7 +2593,6 @@
             alert('Cores aplicadas com sucesso! As mudanças serão visíveis na próxima atualização.');
         }
 
-
         function updateIcon() {
             const newIcon = document.getElementById('appIcon').value;
             if (!newIcon) {
@@ -2876,7 +2611,6 @@
             alert('Ícone atualizado com sucesso!');
         }
 
-
         function updateAppName() {
             const newName = document.getElementById('appName').value;
             if (!newName) {
@@ -2894,12 +2628,10 @@
             alert('Nome do aplicativo atualizado com sucesso!');
         }
 
-
         function editPlan(planType) {
             document.getElementById('mealEditor').classList.remove('hidden');
             alert(`Editor de plano ${planType} em desenvolvimento. Aqui você poderá editar as 6 refeições do plano.`);
         }
-
 
         function saveMeal() {
             const name = document.getElementById('mealName').value;
@@ -2915,14 +2647,12 @@
             cancelMealEdit();
         }
 
-
         function cancelMealEdit() {
             document.getElementById('mealEditor').classList.add('hidden');
             document.getElementById('mealName').value = '';
             document.getElementById('mealTime').value = '';
             document.getElementById('mealDescription').value = '';
         }
-
 
         function updateAnalytics() {
             const allowedUsers = JSON.parse(localStorage.getItem('vivasabor_allowed_users') || '[]');
@@ -2948,76 +2678,35 @@
             document.getElementById('premiumPercentage').textContent = premiumPercentage + '%';
         }
 
-
-        // ========== LOGOUT COM FIREBASE ==========
         function logout() {
             if (confirm('Tem certeza que deseja sair?')) {
-                // Se for administrador com Firebase Admin SDK
-                if (userData && userData.adminSDK) {
-                    console.log('🔐 Logout do administrador (Firebase Admin SDK)');
-                    
-                    // Limpar dados locais
-                    userData = {};
-                    currentUser = null;
-                    currentStep = 1;
-                    selectedGender = '';
-                    selectedRestrictions = [];
-                    selectedGoal = '';
-                    selectedActivity = '';
-                    selectedPlan = '';
-                    
-                    // Mostrar tela de login
-                    document.getElementById('adminPanel').classList.add('hidden');
-                    document.getElementById('mainApp').classList.add('hidden');
-                    document.getElementById('onboardingScreen').classList.add('hidden');
-                    document.getElementById('loginScreen').classList.remove('hidden');
-                    showLogin();
-                    
-                    // Limpar campos
-                    document.getElementById('loginEmail').value = '';
-                    document.getElementById('loginPassword').value = '';
-                    
-                    return;
-                }
+                // Clear user data
+                userData = {};
+                currentStep = 1;
+                selectedGender = '';
+                selectedRestrictions = [];
+                selectedGoal = '';
+                selectedActivity = '';
+                selectedPlan = '';
                 
-                // Para outros usuários, usar Firebase Auth
-                auth.signOut()
-                    .then(() => {
-                        console.log('Logout Firebase realizado com sucesso');
-                        
-                        // Limpar dados locais (sua lógica original)
-                        userData = {};
-                        currentUser = null;
-                        currentStep = 1;
-                        selectedGender = '';
-                        selectedRestrictions = [];
-                        selectedGoal = '';
-                        selectedActivity = '';
-                        selectedPlan = '';
-                        
-                        // Ocultar seções
-                        document.getElementById('adminPanel').classList.add('hidden');
-                        document.getElementById('mainApp').classList.add('hidden');
-                        document.getElementById('onboardingScreen').classList.add('hidden');
-                        
-                        // Mostrar login
-                        document.getElementById('loginScreen').classList.remove('hidden');
-                        showLogin();
-                        
-                        // Limpar campos
-                        document.getElementById('loginEmail').value = '';
-                        document.getElementById('loginPassword').value = '';
-                    })
-                    .catch((error) => {
-                        console.error('Erro no logout:', error);
-                        alert('Erro ao sair. Tente novamente.');
-                    });
+                // Hide all sections
+                document.getElementById('adminPanel').classList.add('hidden');
+                document.getElementById('mainApp').classList.add('hidden');
+                document.getElementById('onboardingScreen').classList.add('hidden');
+                
+                // Show login screen
+                document.getElementById('loginScreen').classList.remove('hidden');
+                showLogin();
+                
+                // Clear form fields
+                document.getElementById('loginEmail').value = '';
+                document.getElementById('loginPassword').value = '';
             }
         }
+
         // Recipe and video functions
         let allRecipes = [];
         let currentRecipeFilter = 'all';
-
 
         // AI Recipe Generation System
         function generateAIRecipes(userRestrictions) {
@@ -3058,7 +2747,6 @@
                 ]
             };
 
-
             const ingredients = {
                 'fruta': ['banana', 'morango', 'manga', 'abacaxi', 'maçã'],
                 'proteina': ['whey protein', 'pasta de amendoim', 'quinoa', 'chia'],
@@ -3071,10 +2759,8 @@
                 'leguminosa': ['lentilha', 'grão de bico', 'feijão branco']
             };
 
-
             const aiRecipes = [];
             let recipeId = 1000; // Start AI recipes with ID 1000+
-
 
             Object.keys(aiRecipeTemplates).forEach(category => {
                 aiRecipeTemplates[category].forEach(template => {
@@ -3093,12 +2779,10 @@
                             }
                         };
 
-
                         // Generate recipe name and ingredients
                         let recipeName = template.base;
                         let recipeIngredients = [...template.ingredients];
                         let recipeInstructions = [...template.instructions];
-
 
                         // Replace placeholders with random ingredients
                         Object.keys(ingredients).forEach(type => {
@@ -3108,11 +2792,9 @@
                             recipeInstructions = recipeInstructions.map(inst => inst.replace(`{${type}}`, randomIngredient));
                         });
 
-
                         recipe.name = recipeName;
                         recipe.ingredients = recipeIngredients;
                         recipe.instructions = recipeInstructions;
-
 
                         // Add restrictions based on user needs
                         if (userRestrictions.includes('lactose')) recipe.restrictions.push('sem-lactose');
@@ -3122,16 +2804,13 @@
                         if (userRestrictions.includes('diabetes')) recipe.restrictions.push('baixo-acucar');
                         if (userRestrictions.includes('hipertensao')) recipe.restrictions.push('baixo-sodio');
 
-
                         aiRecipes.push(recipe);
                     }
                 });
             });
 
-
             return aiRecipes;
         }
-
 
         function loadRecipes() {
             allRecipes = [
@@ -3594,10 +3273,8 @@
                 }
             ];
 
-
             displayRecipes(allRecipes);
         }
-
 
         function displayRecipes(recipes) {
             const recipesGrid = document.getElementById('recipesGrid');
@@ -3632,7 +3309,6 @@
                 });
             }
 
-
             if (filteredRecipes.length === 0) {
                 recipesGrid.innerHTML = `
                     <div class="col-span-full text-center py-8">
@@ -3643,7 +3319,6 @@
                 `;
                 return;
             }
-
 
             recipesGrid.innerHTML = filteredRecipes.map(recipe => `
                 <div class="bg-white rounded-2xl p-4 card-shadow recipe-card">
@@ -3674,7 +3349,6 @@
             `).join('');
         }
 
-
         function getCategoryName(category) {
             const names = {
                 'cafe': 'Café da Manhã',
@@ -3686,7 +3360,6 @@
             };
             return names[category] || category;
         }
-
 
         function getRestrictionName(restriction) {
             const names = {
@@ -3702,7 +3375,6 @@
             return names[restriction] || restriction;
         }
 
-
         function filterRecipes(category) {
             currentRecipeFilter = category;
             
@@ -3714,23 +3386,19 @@
             event.target.classList.remove('bg-cream', 'text-brown');
             event.target.classList.add('active', 'bg-green', 'text-white');
 
-
             // Filter and display recipes
             displayRecipes(allRecipes);
         }
 
-
         function viewRecipe(recipeId) {
             const recipe = allRecipes.find(r => r.id === recipeId);
             if (!recipe) return;
-
 
             // Populate modal with recipe data
             document.getElementById('recipeModalTitle').textContent = recipe.name;
             document.getElementById('recipeModalTime').textContent = `⏱️ ${recipe.time}`;
             document.getElementById('recipeModalDifficulty').textContent = `🍽️ ${recipe.difficulty}`;
             document.getElementById('recipeModalCategory').textContent = `🥗 ${getCategoryName(recipe.category)}`;
-
 
             // Ingredients
             const ingredientsList = document.getElementById('recipeModalIngredients');
@@ -3740,7 +3408,6 @@
                     <span class="text-brown">${ingredient}</span>
                 </li>`
             ).join('');
-
 
             // Instructions
             const instructionsList = document.getElementById('recipeModalInstructions');
@@ -3753,7 +3420,6 @@
                 </div>`
             ).join('');
 
-
             // Nutrition
             if (recipe.nutrition) {
                 document.getElementById('recipeModalCalories').textContent = recipe.nutrition.calories;
@@ -3762,23 +3428,19 @@
                 document.getElementById('recipeModalFat').textContent = recipe.nutrition.fat;
             }
 
-
             // Restrictions
             const restrictionTags = document.getElementById('recipeModalRestrictionTags');
             restrictionTags.innerHTML = recipe.restrictions.map(restriction => 
                 `<span class="px-3 py-1 bg-green text-white rounded-full text-sm">${getRestrictionName(restriction)}</span>`
             ).join('');
 
-
             // Show modal
             document.getElementById('recipeModal').classList.remove('hidden');
         }
 
-
         function closeRecipeModal() {
             document.getElementById('recipeModal').classList.add('hidden');
         }
-
 
         function loadVideos() {
             const videos = [
@@ -3816,10 +3478,8 @@
                 }
             ];
 
-
             displayVideos(videos);
         }
-
 
         function displayVideos(videos) {
             const videosGrid = document.getElementById('videosGrid');
@@ -3845,7 +3505,6 @@
             `).join('');
         }
 
-
         function getCategoryVideoName(category) {
             const names = {
                 'basico': 'Básico',
@@ -3854,7 +3513,6 @@
             };
             return names[category] || category;
         }
-
 
         function filterVideos(category) {
             // Update filter buttons
@@ -3865,20 +3523,16 @@
             event.target.classList.remove('bg-cream', 'text-brown');
             event.target.classList.add('active', 'bg-gold', 'text-white');
 
-
             // Filter and display videos
             loadVideos(); // For now, just reload all videos
         }
-
 
         function playVideo(videoId) {
             alert(`Reproduzindo vídeo-aula!\n\n🎥 Recurso Premium Ativo\n\nEste vídeo incluirá:\n• Demonstração passo a passo\n• Dicas profissionais\n• Legendas em português\n• Possibilidade de pausar e repetir\n• Download para assistir offline`);
         }
 
-
         // Consultation management system
         let scheduledConsultations = [];
-
 
         function scheduleConsultation(type) {
             const typeNames = {
@@ -3920,7 +3574,6 @@
             alert(`✅ Consulta agendada com sucesso!\n\n👨‍⚕️ ${randomProfessional} - ${typeNames[type]}\n📅 ${consultation.date} às ${randomTime}\n\nVocê receberá um lembrete 1 hora antes da consulta.`);
         }
 
-
         function cancelConsultation(consultationId) {
             const consultation = scheduledConsultations.find(c => c.id === consultationId);
             if (!consultation) return;
@@ -3931,7 +3584,6 @@
                 alert('Consulta cancelada com sucesso!');
             }
         }
-
 
         function updateConsultationsDisplay() {
             const consultationsContainer = document.getElementById('scheduledConsultations');
@@ -3962,7 +3614,6 @@
             `).join('');
         }
 
-
         // Support functions
         function openEmailSupport() {
             const subject = encodeURIComponent('Suporte Viva Sabor - Dúvida');
@@ -3970,7 +3621,6 @@
             
             window.open(`mailto:comercialvivasabor@gmail.com?subject=${subject}&body=${body}`, '_blank');
         }
-
 
         function openChatSupport() {
             if (userData.plan !== 'premium') {
@@ -3981,15 +3631,12 @@
             alert(`💬 Chat ao Vivo Iniciado!\n\n🟢 Conectado com a equipe de suporte\n\nOlá ${userData.name}! Como posso ajudá-lo(a) hoje?\n\n• Resposta em tempo real\n• Suporte especializado\n• Histórico de conversas salvo\n• Disponível 24/7`);
         }
 
-
         function showUpgradeModal() {
             alert(`⭐ Upgrade para Premium!\n\nDesbloqueie recursos exclusivos:\n\n✅ Consultas com especialistas\n✅ Vídeo-aulas exclusivas\n✅ Chat ao vivo 24/7\n✅ Receitas premium\n✅ Suporte prioritário\n\nEntre em contato com o administrador para fazer o upgrade!`);
         }
 
-
         // Profile functions
         let editingRestrictions = [];
-
 
         function editProfile() {
             // Populate form with current user data
@@ -4016,7 +3663,6 @@
             document.getElementById('profileModal').classList.remove('hidden');
         }
 
-
         function selectEditGender(gender) {
             userData.gender = gender;
             document.querySelectorAll('.edit-gender-btn').forEach(btn => {
@@ -4027,11 +3673,9 @@
             event.target.classList.add('border-green', 'bg-green', 'text-white');
         }
 
-
         function closeProfileModal() {
             document.getElementById('profileModal').classList.add('hidden');
         }
-
 
         function saveProfile() {
             // Get form values
@@ -4062,7 +3706,6 @@
             alert('Perfil atualizado com sucesso!');
         }
 
-
         function changeRestrictions() {
             // Initialize editing restrictions with current user restrictions
             editingRestrictions = [...(userData.restrictions || [])];
@@ -4086,7 +3729,6 @@
             document.getElementById('restrictionsModal').classList.remove('hidden');
         }
 
-
         function toggleModalRestriction(restriction) {
             const index = editingRestrictions.indexOf(restriction);
             if (index > -1) {
@@ -4100,11 +3742,9 @@
             }
         }
 
-
         function closeRestrictionsModal() {
             document.getElementById('restrictionsModal').classList.add('hidden');
         }
-
 
         function saveRestrictions() {
             // Update user restrictions
@@ -4120,10 +3760,9 @@
             alert('Restrições alimentares atualizadas com sucesso!\nAs receitas foram filtradas conforme suas novas preferências.');
         }
 
-
-        // ========== INICIALIZAÇÃO ==========
+        // Initialize app
         document.addEventListener('DOMContentLoaded', function() {
-            // Inicializar usuários demo se não existirem
+            // Initialize with some demo users if none exist
             const allowedUsers = JSON.parse(localStorage.getItem('vivasabor_allowed_users') || '[]');
             if (allowedUsers.length === 0) {
                 localStorage.setItem('vivasabor_allowed_users', JSON.stringify([
@@ -4133,7 +3772,7 @@
                 ]));
             }
             
-            // Verificar se há usuário logado via URL (manter sua lógica)
+            // Check if user is already logged in
             const urlParams = new URLSearchParams(window.location.search);
             const email = urlParams.get('email');
             
@@ -4141,15 +3780,14 @@
                 const existingUser = localStorage.getItem('vivasabor_user_' + email);
                 if (existingUser) {
                     userData = JSON.parse(existingUser);
-                    // Não chamar showMainApp() aqui - deixar o Firebase lidar
+                    showMainApp();
                     return;
                 }
             }
             
-            // Mostrar login por padrão
+            // Show login screen by default
             showLogin();
         });
     </script>
-</script>
-</body>
-    </html>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96e43e852598f63a',t:'MTc1NTA0NjQ5OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+                    </html>
